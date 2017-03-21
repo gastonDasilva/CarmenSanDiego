@@ -9,8 +9,8 @@ public class Caso {
 	Pais paisDelRobo;
 
 	
-	public void iniciarCaso (Caso s){
-		
+	public void iniciarCaso (){
+		paisDelRobo.recorrerLugaresDeInteres();
 		
 	}
 

@@ -8,7 +8,7 @@ public class Pais {
 	List <Pais> paisConexiones = new ArrayList<Pais>();
 	ArrayList<LugarDeInteres> lugaresDeInteres= new ArrayList<LugarDeInteres>(); // limite son 3 lugares sin repetidos
 
-	public void setNombrePias(String n){
+	public void setNombrePais(String n){
 		this.nombrePais = n;
 	}
 	
@@ -32,8 +32,14 @@ public class Pais {
 	}
 	
 	public void recorrerLugaresDeInteres (){
+		// recorre los lugares de interes y los procesa con el fin de encontrar al villano
 		for (int i= 0;i != lugaresDeInteres.size(); i++ ){
-			 lugaresDeInteres.get(i).procesarOcupante();
+			if(lugaresDeInteres.get(i).hayCuidador()){
+			    lugaresDeInteres.get(i).procesarCuidador();
+			 }
+			lugaresDeInteres.get(i).procesarOcupante();
 		}
+		
 	}
+
 }
